@@ -38,8 +38,26 @@ limitations under the License.
 
 ## Usage
 
+To use in Observable,
+
 ```javascript
-var binetBy = require( '@stdlib/math-strided-special-binet-by' );
+binetBy = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-binet-by@umd/bundle.js' )
+```
+
+To include the bundle in a webpage,
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-binet-by@umd/bundle.js"></script>
+```
+
+If no recognized module system is present, access bundle contents via the global scope:
+
+```html
+<script type="text/javascript">
+(function () {
+    window.binetBy;
+})()
+</script>
 ```
 
 #### binetBy( N, x, strideX, y, strideY, clbk\[, thisArg] )
@@ -201,10 +219,15 @@ binetBy.ndarray( 3, x, 2, 1, y, -1, y.length-1, accessor );
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var uniform = require( '@stdlib/random-base-uniform' );
-var filledarray = require( '@stdlib/array-filled' );
-var binetBy = require( '@stdlib/math-strided-special-binet-by' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-base-uniform@umd/bundle.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-filled@umd/bundle.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-strided-special-binet-by@umd/bundle.js"></script>
+<script type="text/javascript">
+(function () {
 
 function accessor( v, i ) {
     if ( (i%3) === 0 ) {
@@ -226,6 +249,11 @@ console.log( y );
 
 binetBy.ndarray( x.length, x, 1, 0, y, -1, y.length-1, accessor );
 console.log( y );
+
+})()
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -292,6 +320,13 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 
 -->
 
+[umd]: https://github.com/umdjs/umd
+[es-module]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+
+[deno-url]: https://github.com/stdlib-js/math-strided-special-binet-by/tree/deno
+[umd-url]: https://github.com/stdlib-js/math-strided-special-binet-by/tree/umd
+[esm-url]: https://github.com/stdlib-js/math-strided-special-binet-by/tree/esm
+
 [chat-image]: https://img.shields.io/gitter/room/stdlib-js/stdlib.svg
 [chat-url]: https://gitter.im/stdlib-js/stdlib/
 
@@ -305,7 +340,7 @@ Copyright &copy; 2016-2021. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/math/base/special/binet]: https://github.com/stdlib-js/math-base-special-binet
+[@stdlib/math/base/special/binet]: https://github.com/stdlib-js/math-base-special-binet/tree/umd
 
 </section>
 
